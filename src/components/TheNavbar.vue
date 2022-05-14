@@ -57,7 +57,7 @@ watchEffect(() => {
             class="flex items-center sm:-ml-3"
             style="font-size: 24px"
           >
-            snapshot
+            PolkaVote
           </router-link>
         </div>
         <div :key="web3Account" class="flex space-x-2">

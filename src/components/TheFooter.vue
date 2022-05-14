@@ -12,21 +12,9 @@ const socials = [
     link: 'https://twitter.com/SnapshotLabs'
   },
   {
-    icon: 'discord',
-    link: 'https://discord.gg/snapshot'
-  },
-  {
-    icon: 'telegram',
-    link: 'https://t.me/snapshotlabs'
-  },
-  {
     icon: 'github',
     link: `https://github.com/snapshot-labs`
   },
-  {
-    icon: 'gitbook',
-    link: 'https://docs.snapshot.org/'
-  }
 ];
 </script>
 
@@ -57,7 +45,7 @@ const socials = [
     <div
       class="pt-3 md:pt-0 md:pr-2 md:order-first whitespace-nowrap opacity-40"
     >
-      © {{ yearNow }} Snapshot Labs.
+      © {{ yearNow }} PolkaVote.
     </div>
   </BaseContainer>
   <teleport to="#modal">
