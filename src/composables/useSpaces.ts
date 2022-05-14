@@ -2,8 +2,8 @@ import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import orderBy from 'lodash/orderBy';
 import networks from '@snapshot-labs/snapshot.js/src/networks.json';
-import verified from '@/../snapshot-spaces/spaces/verified.json';
-import verifiedSpacesCategories from '@/../snapshot-spaces/spaces/categories.json';
+import verified from '../../snapshot-spaces/spaces/verified.json';
+import verifiedSpacesCategories from '../../snapshot-spaces/spaces/categories.json';
 
 const spaces: any = ref([]);
 const spacesLoaded = ref(false);

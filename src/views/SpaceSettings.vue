@@ -17,6 +17,7 @@ import {
   getSpaceUri,
   clone
 } from '@snapshot-labs/snapshot.js/src/utils';
+import { getKey, setup } from 'pns-sdk';
 
 const props = defineProps({
   space: Object,
@@ -274,10 +275,12 @@ onMounted(async () => {
     }
   }
   try {
-    const uri = await getSpaceUri(
-      props.space.id,
-      import.meta.env.VITE_DEFAULT_NETWORK
-    );
+    // const uri = await getSpaceUri(
+    //   props.space.id,
+    //   import.meta.env.VITE_DEFAULT_NETWORK
+    // );
+    await setup();
+    const uri = await getKey(props.space.id, 'text.url');
     console.log('URI', uri);
     currentTextRecord.value = uri;
   } catch (e) {
@@ -485,7 +488,7 @@ async function handleSetRecord() {
           </BaseBlock>
           <BaseBlock :title="$t('settings.admins')" v-if="isSpaceController">
             <BaseBlock
-              class="!border-red mb-2"
+              :style="`border-color: red !important`"
               v-if="inputError('admins')"
             >
               <BaseIcon name="warning" class="mr-2 !text-red" />
@@ -493,20 +496,6 @@ async function handleSetRecord() {
             </BaseBlock>
             <TextareaArray
               v-model="form.admins"
-              :placeholder="`0x8C28Cf33d9Fd3D0293f963b1cd27e3FF422B425c\n0xeF8305E140ac520225DAf050e2f71d5fBcC543e7`"
-              class="input w-full text-left"
-              style="font-size: 18px"
-            />
-          </BaseBlock>
-          <BaseBlock :title="$t('settings.authors')">
-            <BaseBlock class="!border-red mb-2" v-if="inputError('members')">
-              <BaseIcon name="warning" class="mr-2 !text-red" />
-              <span class="!text-red">
-                {{ inputError('members') }}&nbsp;</span
-              >
-            </BaseBlock>
-            <TextareaArray
-              v-model="form.members"
               :placeholder="`0x8C28Cf33d9Fd3D0293f963b1cd27e3FF422B425c\n0xeF8305E140ac520225DAf050e2f71d5fBcC543e7`"
               class="input w-full text-left"
               style="font-size: 18px"
@@ -548,7 +537,25 @@ async function handleSetRecord() {
             </BaseButton>
           </BaseBlock>
           <BaseBlock :title="$t('settings.proposalValidation')">
-            <div class="space-y-2">
+            <div class="flex items-center space-x-2 pr-2 mb-2">
+              <BaseCheckbox v-model="form.filters.onlyMembers" />
+              <span>{{ $t('settings.allowOnlyAuthors') }}</span>
+            </div>
+            <div v-if="form.filters.onlyMembers">
+              <BaseBlock class="!border-red" v-if="inputError('members')">
+                <BaseIcon name="warning" class="mr-2 !text-red" />
+                <span class="!text-red">
+                  {{ inputError('members') }}&nbsp;</span
+                >
+              </BaseBlock>
+              <TextareaArray
+                v-model="form.members"
+                :placeholder="`0x8C28Cf33d9Fd3D0293f963b1cd27e3FF422B425c\n0xeF8305E140ac520225DAf050e2f71d5fBcC543e7`"
+                class="input w-full text-left"
+                style="font-size: 18px"
+              />
+            </div>
+            <div v-else class="space-y-2">
               <UiInput
                 @click="modalValidationOpen = true"
                 :error="inputError('settings.validation')"
@@ -570,10 +577,6 @@ async function handleSetRecord() {
                     $t('settings.proposalThreshold')
                   }}</template>
                 </UiInput>
-                <div class="flex items-center space-x-2 pr-2 mt-2">
-                  <BaseCheckbox v-model="form.filters.onlyMembers" />
-                  <span>{{ $t('settings.allowOnlyAuthors') }}</span>
-                </div>
               </div>
             </div>
           </BaseBlock>

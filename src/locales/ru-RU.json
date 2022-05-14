@@ -341,8 +341,7 @@
       "votedFor": "Voted {choice}",
       "today": "Today",
       "thisWeek": "This week",
-      "older": "Older",
-      "noActivity": "No activity yet"
+      "older": "Older"
     },
     "settings": {
       "header": "Edit profile",
@@ -404,6 +403,11 @@
       "ranked-choice": "Каждый участник может выбрать и расставить любое количество вариантов. Результаты вычисляются методом мгновенного подсчета голосов.",
       "weighted": "Каждый участник голосования может распределить право голоса между любым количеством вариантов.",
       "basic": "Голосование с одним вариантом выбора с тремя вариантами: За, Против или Воздержался"
+    },
+    "choices": {
+      "for": "За",
+      "against": "Против",
+      "abstain": "Воздержаться"
     }
   },
   "safeSnap": {
@@ -453,8 +457,7 @@
       "switchChain": "Переключите ваш кошелек на {0} для выполнения запроса",
       "question": "Принято ли это предложение и соответствует ли оно",
       "criteria": "Критерии одобрения?",
-      "proposalPassed": "Did the proposal pass?",
-      "expired": "The proposal has expired"
+      "proposalPassed": "Did the proposal pass?"
     }
   },
   "poap": {

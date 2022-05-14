@@ -25,7 +25,7 @@ export function useApolloQuery() {
       const response = await ensApolloClient.query(options);
       loading.value = false;
 
-      return response.data;
+      return response;
     } catch (error) {
       loading.value = false;
       console.log(error);

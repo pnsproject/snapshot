@@ -341,8 +341,7 @@
       "votedFor": "Voted {choice}",
       "today": "Today",
       "thisWeek": "This week",
-      "older": "Older",
-      "noActivity": "No activity yet"
+      "older": "Older"
     },
     "settings": {
       "header": "Edit profile",
@@ -404,6 +403,11 @@
       "ranked-choice": "Cada votante puede seleccionar y clasificar cualquier cantidad de opciones. Los resultados serán calculados con un método de segunda vuelta instantánea.",
       "weighted": "Cada votante puede repartir sus votos entre cualquier cantidad de opciones.",
       "basic": "Votación individual con tres opciones: A favor, En Contra o Abstenerse"
+    },
+    "choices": {
+      "for": "Para",
+      "against": "Contra",
+      "abstain": "Abstenerse"
     }
   },
   "safeSnap": {
@@ -453,8 +457,7 @@
       "switchChain": "Cambia tu cartera a {0} para solicitar la ejecución",
       "question": "Acaso pasó esta propuesta y cumple los",
       "criteria": "criterios de aceptación?",
-      "proposalPassed": "Did the proposal pass?",
-      "expired": "The proposal has expired"
+      "proposalPassed": "Did the proposal pass?"
     }
   },
   "poap": {

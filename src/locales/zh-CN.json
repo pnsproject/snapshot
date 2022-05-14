@@ -341,8 +341,7 @@
       "votedFor": "投了 {choice}",
       "today": "今天",
       "thisWeek": "本周",
-      "older": "更早的",
-      "noActivity": "暂无活动"
+      "older": "更早的"
     },
     "settings": {
       "header": "编辑个人资料",
@@ -404,6 +403,11 @@
       "ranked-choice": "每个选民都可以选择和排列任何数目的选择。结果是通过即时计算的。",
       "weighted": "每个选民都可以在任何选择中分散投票权。",
       "basic": "有三种投票单选项：支持，反对，和弃权"
+    },
+    "choices": {
+      "for": "支持",
+      "against": "反对",
+      "abstain": "弃权"
     }
   },
   "safeSnap": {
@@ -453,8 +457,7 @@
       "switchChain": "将你的钱包切换到 {0} 以请求执行",
       "question": "该提案是否通过并且是否符合",
       "criteria": "接收标准？",
-      "proposalPassed": "该提案通过了吗？",
-      "expired": "提案已过期"
+      "proposalPassed": "该提案通过了吗？"
     }
   },
   "poap": {

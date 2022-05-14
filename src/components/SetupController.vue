@@ -4,6 +4,7 @@ import { shorten } from '@/helpers/utils';
 import { useSpaceController } from '@/composables/useSpaceController';
 import { useRouter, useRoute } from 'vue-router';
 import { getSpaceUri } from '@snapshot-labs/snapshot.js/src/utils';
+import { setup, getKey } from 'pns-sdk';
 
 const router = useRouter();
 const route = useRoute();
@@ -38,9 +39,10 @@ const loadingTextRecord = ref(false);
 onMounted(async () => {
   try {
     loadingTextRecord.value = true;
-    const uri = await getSpaceUri(
+    await setup()
+    const uri = await getKey(
       props.ensAddress,
-      import.meta.env.VITE_DEFAULT_NETWORK
+      'text.url'
     );
     console.log('URI', uri);
     const uriAddress = uri?.split('/')[4] ?? '';

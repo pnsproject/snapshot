@@ -34,7 +34,7 @@
   "inSpaces": "Di {0} ruang",
   "votes": "Suara",
   "seeMore": "Lihat lebih banyak",
-  "seeAll": "Lihat semua",
+  "seeAll": "See all",
   "network": "Jaringan",
   "networks": "Jaringan",
   "skins": "Tampilan",
@@ -70,7 +70,7 @@
   "notificationsBlocked": "Browser Anda memblokir notifikasi",
   "notificationsNotSupported": "Browser anda tidak mendukung pemberitahuan",
   "walletNotSupported": "Wallet tidak didukung",
-  "seeInExplorer": "Lihat di explorer",
+  "seeInExplorer": "See explorer",
   "learnMore": "Pelajari lebih lanjut",
   "logout": "Keluar",
   "continue": "Lanjut",
@@ -341,8 +341,7 @@
       "votedFor": "Voted {choice}",
       "today": "Today",
       "thisWeek": "This week",
-      "older": "Older",
-      "noActivity": "No activity yet"
+      "older": "Older"
     },
     "settings": {
       "header": "Edit profile",
@@ -404,6 +403,11 @@
       "ranked-choice": "Setiap pemilih dapat memilih dan memberi peringkat ke sejumlah pilihan. Hasil dihitung dengan metode instant-runoff.",
       "weighted": "Setiap pemilih dapat menyebarkan hak suara di sejumlah pilihan.",
       "basic": "Voting pilihan tunggal dengan tiga pilihan: Untuk, Menentang atau Abstain"
+    },
+    "choices": {
+      "for": "Untuk",
+      "against": "Menentang",
+      "abstain": "Abstain"
     }
   },
   "safeSnap": {
@@ -453,8 +457,7 @@
       "switchChain": "Alihkan dompet Anda ke {0} untuk mengajukan pelaksanaan",
       "question": "Apaka proposal ini lolos dan sesuai dengan",
       "criteria": "kriteria penerimaan?",
-      "proposalPassed": "Did the proposal pass?",
-      "expired": "The proposal has expired"
+      "proposalPassed": "Did the proposal pass?"
     }
   },
   "poap": {

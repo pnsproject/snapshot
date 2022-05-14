@@ -139,9 +139,6 @@
   <div v-if="questionState === questionStates.proposalRejected" class="my-4">
     {{ $t('safeSnap.labels.rejected') }}
   </div>
-  <div v-if="questionState === questionStates.timeExpired" class="my-4">
-    {{ $t('safeSnap.labels.expired') }}
-  </div>
 
   <teleport to="#modal">
     <SafeSnapModalOptionApproval
@@ -204,8 +201,7 @@ const QuestionStates = {
   waitingForCooldown: 5,
   proposalApproved: 6,
   proposalRejected: 7,
-  completelyExecuted: 8,
-  timeExpired: 9
+  completelyExecuted: 8
 };
 Object.freeze(QuestionStates);
 
@@ -452,23 +448,25 @@ const questionState = computed(() => {
   if (questionDetails.value.currentBond.isZero())
     return QuestionStates.questionNotSet;
 
+  if (!questionDetails.value.finalizedAt)
+    return QuestionStates.questionNotResolved;
+
   const ts = (Date.now() / 1e3).toFixed();
-  const { finalizedAt, cooldown, expiration, executionApproved, nextTxIndex } =
-    questionDetails.value;
-
-  const isExpired = finalizedAt + expiration < ts;
-
-  if (!finalizedAt) return QuestionStates.questionNotResolved;
-  if (executionApproved) {
-    if (finalizedAt + cooldown > ts) return QuestionStates.waitingForCooldown;
-
-    if (!Number.isInteger(nextTxIndex))
+  if (questionDetails.value.executionApproved) {
+    if (
+      questionDetails.value.finalizedAt + questionDetails.value.cooldown >
+      ts
+    ) {
+      return QuestionStates.waitingForCooldown;
+    }
+    if (!Number.isInteger(questionDetails.value.nextTxIndex))
       return QuestionStates.completelyExecuted;
-    else if (isExpired) return QuestionStates.timeExpired;
-
     return QuestionStates.proposalApproved;
+  } else {
+    if (questionDetails.value.finalizedAt < ts) {
+      return QuestionStates.proposalRejected;
+    }
   }
-  if (isExpired) return QuestionStates.proposalRejected;
 
   return QuestionStates.error;
 });

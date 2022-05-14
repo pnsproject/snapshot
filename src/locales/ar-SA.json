@@ -341,8 +341,7 @@
       "votedFor": "Voted {choice}",
       "today": "Today",
       "thisWeek": "This week",
-      "older": "Older",
-      "noActivity": "No activity yet"
+      "older": "Older"
     },
     "settings": {
       "header": "Edit profile",
@@ -404,6 +403,11 @@
       "ranked-choice": "يمكن لكل ناخب اختيار وترتيب أي عدد من الخيارات. يتم حساب النتائج بطريقة العد الفوري.",
       "weighted": "ويمكن لكل ناخب أن يوزع قوة التصويت على أي عدد من الخيارات.",
       "basic": "التصويت بخيار واحد من ثلاثة خيارات: مع،ضد أو الامتناع عن التصويت"
+    },
+    "choices": {
+      "for": "من أجل",
+      "against": "ضد",
+      "abstain": "الامتناع"
     }
   },
   "safeSnap": {
@@ -453,8 +457,7 @@
       "switchChain": "قم بتغيير محفظتك إلى {0} لطلب التنفيذ",
       "question": "هل تم إقرار هذا الاقتراح وهل استوفى",
       "criteria": "معايير القبول؟",
-      "proposalPassed": "Did the proposal pass?",
-      "expired": "The proposal has expired"
+      "proposalPassed": "Did the proposal pass?"
     }
   },
   "poap": {

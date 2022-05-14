@@ -9,7 +9,7 @@ export function useCategories() {
   const spacesPerCategory = computed(() => {
     const spaces = orderedSpaces.value.reduce((counters, space) => {
       if (!space.private) {
-        space.categories?.forEach((c: any) => counters[c]++);
+        space.categories.forEach((c: any) => counters[c]++);
         return counters;
       }
     }, Object.fromEntries(categories.map(c => [c, 0])));

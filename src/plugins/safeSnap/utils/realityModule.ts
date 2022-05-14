@@ -52,7 +52,6 @@ export const getModuleDetails = async (
   oracle: string;
   cooldown: number;
   minimumBond: number;
-  expiration: number;
 }> => {
   let moduleDetails;
   try {
@@ -61,8 +60,7 @@ export const getModuleDetails = async (
       [moduleAddress, 'avatar'],
       [moduleAddress, 'oracle'],
       [moduleAddress, 'questionCooldown'],
-      [moduleAddress, 'minimumBond'],
-      [moduleAddress, 'answerExpiration']
+      [moduleAddress, 'minimumBond']
     ]);
   } catch (err) {
     // The Reality Module doesn't have an avatar field, causing tx to fails.
@@ -71,8 +69,7 @@ export const getModuleDetails = async (
       [moduleAddress, 'executor'],
       [moduleAddress, 'oracle'],
       [moduleAddress, 'questionCooldown'],
-      [moduleAddress, 'minimumBond'],
-      [moduleAddress, 'answerExpiration']
+      [moduleAddress, 'minimumBond']
     ]);
   }
 
@@ -80,8 +77,7 @@ export const getModuleDetails = async (
     dao: moduleDetails[0][0],
     oracle: moduleDetails[1][0],
     cooldown: moduleDetails[2][0],
-    minimumBond: moduleDetails[3][0],
-    expiration: moduleDetails[4][0]
+    minimumBond: moduleDetails[3][0]
   };
 };
 

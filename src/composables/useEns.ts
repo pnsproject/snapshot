@@ -7,7 +7,7 @@ import {
 import { useWeb3 } from '@/composables/useWeb3';
 
 export function useEns() {
-  const validEnsTlds = ['eth', 'xyz', 'com', 'org', 'io', 'app', 'art'];
+  const validEnsTlds = ['dot'];
 
   const { ensApolloQuery } = useApolloQuery();
   const { web3Account } = useWeb3();
@@ -20,37 +20,15 @@ export function useEns() {
     const res = await ensApolloQuery({
       query: ENS_DOMAINS_BY_ACCOUNT_QUERY,
       variables: {
+        parent: BigInt("0x3fce7d1364a893e213bc4212792b517ffc88f5b13b86c8ef9c8d390c3a1370ce"),
         id: web3Account.value.toLowerCase()
       }
     });
 
     // The ens subgraph returns only the hash for domain TLDs other than .eth, so we
     // have to make a second request to fetch the actual domain.
-    ownedEnsDomains.value =
-      (await Promise.all(
-        res.account?.domains.map(async domain => {
-          const hash = domain.name.match(/\[(.*?)\]/)?.[1];
-          if (hash) {
-            const res = await ensApolloQuery({
-              query: ENS_DOMAIN_BY_HASH_QUERY,
-              variables: {
-                id: `0x${hash}`
-              }
-            });
-            if (res.registration?.domain?.labelName) {
-              return {
-                ...domain,
-                name: domain.name.replace(
-                  `[${hash}]`,
-                  res.registration.domain.labelName
-                )
-              };
-            }
-          }
-
-          return domain;
-        }) ?? []
-      )) || [];
+    console.log('res.subdomains', res)
+    ownedEnsDomains.value = res.subdomains;
   };
 
   function isValidEnsDomain(domain) {

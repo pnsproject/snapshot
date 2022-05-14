@@ -1,5 +1,5 @@
 import { getEnsAddress } from '@/helpers/profile';
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import { useApolloQuery } from '@/composables/useApolloQuery';
 import { PROFILES_QUERY } from '@/helpers/queries';
 
@@ -7,33 +7,13 @@ import { PROFILES_QUERY } from '@/helpers/queries';
 const profiles = ref<{
   [address: string]: {
     ens: string;
-    id?: string;
     name?: string;
     about?: string;
     avatar?: string;
-    created?: number;
   };
 }>({});
 
-const reloadingProfile = ref(false);
-
 export function useProfiles() {
-  const loadingProfiles = ref(false);
-
-  const profilesCreated = computed(() => {
-    const profilesWithCreatedAndAvatar = Object.values(profiles.value).filter(
-      profile => profile.avatar && profile.created
-    );
-    const profilesCreatedWithinLastWeek = profilesWithCreatedAndAvatar.filter(
-      profile => profile.created ?? 0 > Date.now() - 1000 * 60 * 60 * 24 * 7
-    );
-    const addressCreatedObject = profilesCreatedWithinLastWeek.reduce(
-      (acc, profile) => ({ ...acc, [profile.id as string]: profile.created }),
-      {}
-    );
-    return addressCreatedObject;
-  });
-
   /**
    * Populates global ref with profile data for batches of addresses.
    */
@@ -46,14 +26,13 @@ export function useProfiles() {
     const { apolloQuery } = useApolloQuery();
     let profilesRes: any = {};
     if (addressesToAdd.length > 0) {
-      loadingProfiles.value = true;
       profilesRes = await Promise.all([
         await getEnsAddress(addressesToAdd),
         await apolloQuery(
           {
             query: PROFILES_QUERY,
             variables: {
-              addresses
+              addresses: addresses[0]
             }
           },
           'users'
@@ -69,8 +48,6 @@ export function useProfiles() {
     }
 
     profiles.value = { ...profilesRes[0], ...profiles.value };
-    loadingProfiles.value = false;
-    reloadingProfile.value = false;
   };
 
   // Reload a profile in profiles object
@@ -80,16 +57,12 @@ export function useProfiles() {
     if (profile) {
       delete profiles.value[address];
     }
-    reloadingProfile.value = true;
     loadProfiles([address]);
   };
 
   return {
     profiles,
     loadProfiles,
-    reloadProfile,
-    loadingProfiles,
-    reloadingProfile,
-    profilesCreated
+    reloadProfile
   };
 }

@@ -45,6 +45,9 @@ export default defineConfig({
     },
     dedupe: ['@popperjs/core']
   },
+  server: {
+    port: 3030
+  },
   test: {
     open: true,
     environment: 'happy-dom'

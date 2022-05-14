@@ -84,7 +84,10 @@ async function loadVotes(skip = 0) {
 
 <template>
   <div>
-    <div class="space-y-3">
+    <BaseBlock v-if="!activities.length" class="text-center">
+      No activity yet
+    </BaseBlock>
+    <div v-else class="space-y-3">
       <ProfileActivityList
         :title="$t('profile.activity.today')"
         v-if="activityToday.length"
@@ -119,10 +122,6 @@ async function loadVotes(skip = 0) {
       </ProfileActivityList>
 
       <LoadingRow v-if="loadingMore" block />
-
-      <BaseBlock v-else-if="!activities.length" class="text-center">
-        {{ $t('profile.activity.noActivity') }}
-      </BaseBlock>
     </div>
     <div class="w-[10px] h-[10px]" ref="endElement" />
   </div>

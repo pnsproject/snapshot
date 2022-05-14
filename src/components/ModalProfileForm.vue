@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { watch, ref, defineEmits } from 'vue';
 import schemas from '@snapshot-labs/snapshot.js/src/schemas';
+import { getIpfsUrl } from '@/helpers/utils';
 import { useAliasAction } from '@/composables/useAliasAction';
 import client from '@/helpers/clientEIP712';
 import { useWeb3 } from '@/composables/useWeb3';
@@ -30,17 +31,12 @@ const form = ref({
   about: ''
 });
 
-async function clearAvatarCache() {
-  await fetch(`https://stamp.fyi/clear/avatar/eth:${props.address}`);
-}
-
 async function save() {
   await client.profile(aliasWallet.value, aliasWallet.value.address, {
     from: web3Account.value,
     timestamp: Number((Date.now() / 1e3).toFixed()),
     profile: JSON.stringify(form.value)
   });
-  await clearAvatarCache();
   reloadProfile(props.address);
   emit('close');
   return notify(['green', t('notify.saved')]);
@@ -72,13 +68,14 @@ watch(
         <InputUploadAvatar
           :avatar="form.avatar"
           @image-uploaded="url => (form.avatar = url)"
-          @image-remove="form.avatar = ''"
+          @image-remove="url => (form.avatar = '')"
         >
           <template v-slot:avatar="{ uploading, previewFile }">
             <div class="relative">
               <BaseAvatar
                 :address="address"
-                :previewFile="previewFile"
+                :imgsrc="form.avatar ? getIpfsUrl(form?.avatar) : ''"
+                :preview="previewFile"
                 size="80"
               />
               <AvatarOverlayEdit :loading="uploading" :avatar="form?.avatar" />

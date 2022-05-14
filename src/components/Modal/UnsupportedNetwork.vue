@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { getInstance } from '@snapshot-labs/lock/plugins/vue3';
 import { computed, ref } from 'vue';
-import { useI18n } from '../../composables/useI18n';
-import { useFlashNotification } from '../../composables/useFlashNotification';
+import { useI18n } from '@/composables/useI18n';
+import { useFlashNotification } from '@/composables/useFlashNotification';
 import { sleep } from '@snapshot-labs/snapshot.js/src/utils';
 
 defineProps<{
@@ -23,10 +23,18 @@ const switchToMainnet = async () => {
   try {
     switchingChain.value = true;
     await window.ethereum?.request({
-      method: 'wallet_switchEthereumChain',
+      method: 'wallet_addEthereumChain',
       params: [
         {
-          chainId: '0x1'
+          chainId: '0x504',
+          chainName: 'Moonbeam',
+          nativeCurrency: {
+            name: 'Glimmer',
+            symbol: 'GLMR',
+            decimals: 18
+          },
+          rpcUrls: ['https://rpc.api.moonbeam.network'],
+          blockExplorerUrls: ['https://moonbeam.moonscan.io']
         }
       ]
     });

@@ -8,6 +8,12 @@ import { useI18n } from '@/composables/useI18n';
 import { useWeb3 } from '@/composables/useWeb3';
 import { isAddress } from '@ethersproject/address';
 import { sendTransaction } from '@snapshot-labs/snapshot.js/src/utils';
+import { keccak_256 as keccak256 } from 'js-sha3';
+import {setup, setKeysByHash, login} from 'pns-sdk'
+
+function sha3 (data: string) {
+  return '0x' + keccak256(data);
+}
 
 const ensAddress = ref('');
 const spaceControllerInput = ref('');
@@ -24,7 +30,11 @@ export function useSpaceController() {
 
   const notify: any = inject('notify');
 
-  const ensAbi = ['function setText(bytes32 node, string key, string value)'];
+  //const ensAbi = ['function setText(bytes32 node, string key, string value)'];
+
+  const ensAbi = [
+    'function getManyByHash(uint256[] calldata keyHashes, uint256 tokenId)'
+  ];
 
   const controllerInputIsValid = computed(() =>
     isAddress(spaceControllerInput.value)
@@ -60,13 +70,20 @@ export function useSpaceController() {
       }
       const ensname = ensAddress.value;
       const node = namehash.hash(ensname);
-      const tx = await sendTransaction(
-        auth.web3,
-        ensPublicResolverAddress,
-        ensAbi,
-        'setText',
-        [node, 'snapshot', textRecord.value]
+      await login();
+      await setup();
+      const tx = await setKeysByHash(
+        ensname,
+        [sha3('text.url')],
+        [textRecord.value]
       );
+      // const tx = await sendTransaction(
+      //   auth.web3,
+      //   ensPublicResolverAddress,
+      //   ensAbi,
+      //   'setManyByHash',
+      //   [node, [sha3('url')], [textRecord.value]]
+      // );
       settingENSRecord.value = false;
       notify(t('notify.transactionSent'));
       waitForSetRecord(tx);

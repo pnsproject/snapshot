@@ -4,8 +4,8 @@ import { getInstance } from '@snapshot-labs/lock/plugins/vue3';
 import { useWeb3 } from '@/composables/useWeb3';
 import { useSkin } from '@/composables/useSkin';
 import { useSpaces } from '@/composables/useSpaces';
-import domains from '@/../snapshot-spaces/spaces/domains.json';
-import aliases from '@/../snapshot-spaces/spaces/aliases.json';
+import domains from './domains.json';
+import aliases from './aliases.json';
 
 const domainName = window.location.hostname;
 let env = 'master';

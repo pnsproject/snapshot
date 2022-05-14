@@ -341,8 +341,7 @@
       "votedFor": "Voted {choice}",
       "today": "Today",
       "thisWeek": "This week",
-      "older": "Older",
-      "noActivity": "No activity yet"
+      "older": "Older"
     },
     "settings": {
       "header": "Edit profile",
@@ -404,6 +403,11 @@
       "ranked-choice": "Her seçmen istediği sayıda seçeneği seçebilir ve sıralayabilir. Sonuçlar anlık akış sayma yöntemiyle hesaplanır.",
       "weighted": "Her seçmen, oy verme gücünü herhangi bir sayıda seçeneğe yayabilir.",
       "basic": "Single choice voting with three choices: For, Against or Abstain"
+    },
+    "choices": {
+      "for": "For",
+      "against": "Against",
+      "abstain": "Abstain"
     }
   },
   "safeSnap": {
@@ -453,8 +457,7 @@
       "switchChain": "Switch your wallet to {0} to request execution",
       "question": "Bu teklif kabul edildi mi ve beklentileri karşılıyor mu",
       "criteria": "kabul şartları?",
-      "proposalPassed": "Did the proposal pass?",
-      "expired": "The proposal has expired"
+      "proposalPassed": "Did the proposal pass?"
     }
   },
   "poap": {

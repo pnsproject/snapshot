@@ -1,5 +1,5 @@
 // URLS
-const API_BASE_URL = 'https://api.poap.tech';
+const API_BASE_URL = 'https://api.poap.xyz';
 const APP_BASE_URL = 'https://app.poap.xyz';
 
 export default class Plugin {
