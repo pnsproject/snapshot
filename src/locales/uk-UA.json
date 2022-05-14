@@ -18,7 +18,7 @@
   "plugins": "Модулі",
   "information": "Інформація",
   "confirm": "Підтвердити",
-  "snapshot": "Snapshot",
+  "snapshot": "PolkaVote",
   "strategies": "Стратегія(ї)",
   "strategiesPage": "Стратегії",
   "space": "Сховище",
@@ -267,25 +267,25 @@
     "chooseExistingEns": "Choose one of your existing PNS domains to create a space with:",
     "useSingleExistingEns": "Use your existing PNS domain:",
     "orReigsterNewEns": "Or register a new domain:",
-    "toCreateASpace": "To create a space, you first need an PNS domain. Enter one below and follow the ENS registration instructions.",
+    "toCreateASpace": "To create a space, you first need an PNS domain. Enter one below and follow the PNS registration instructions.",
     "createASpace": "Створити області",
     "registerEnsButton": "Register",
     "supportedEnsTLDs": "Supported domain endings",
-    "helpDocsAndDiscordLinks": "Not sure how to create a space? Learn more in the <a target='_blank' href='https://docs.snapshot.org/spaces/create'> documentation </a> or join Snapshot <a target='_blank' href='https://discord.gg/snapshot'>Discord</a>.",
-    "setSpaceController": "Set space controller address on ENS",
-    "editSpaceController": "Edit controller on ENS",
+    "helpDocsAndDiscordLinks": "Not sure how to create a space? Learn more in the <a target='_blank' href='https://docs.snapshot.org/spaces/create'> documentation </a> or join PolkaVote <a target='_blank' href='https://discord.gg/snapshot'>Discord</a>.",
+    "setSpaceController": "Set space controller address on PNS",
+    "editSpaceController": "Edit controller on PNS",
     "setController": "Set controller",
-    "explainControllerAndEns": "This action requires a transaction on the Ethereum Mainnet which will add a \"snapshot\" TEXT record to your ENS domain.",
+    "explainControllerAndEns": "This action requires a transaction on the Ethereum Mainnet which will add a \"snapshot\" TEXT record to your PNS domain.",
     "confirmToSetAddress": "Are you sure you want to set {address} as the controller of the space?",
     "controllerHasAuthority": "The controller has full authority over the space settings",
     "controller": "Controller",
-    "selectEnsForSpace": "Choose ENS address",
+    "selectEnsForSpace": "Choose PNS address",
     "textRecordExists": "Currently the space controller is {address}. You can update the space controller by using the form below.",
     "spaceOwnerAddressPlaceHolder": "e.g. 0xF78108c9BBaF466dd96BE41be728Fe3220b37119",
     "controllerAddress": "Controller address",
     "updateController": "Update controller",
-    "connectWithEnsController": "To modify the space controller you need to connect with the wallet that owns {ens}",
-    "seeOnEns": "See on ENS",
+    "connectWithEnsController": "To modify the space controller you need to connect with the wallet that owns {PNS}",
+    "seeOnEns": "See on PNS",
     "goToSettings": "Go to settings"
   },
   "notify": {
@@ -298,7 +298,7 @@
     "delegationRemoved": "Delegation removed",
     "proposalCreated": "Proposal created",
     "voteSuccessful": "Your vote is in!",
-    "ensSet": "ENS text record was successfully set"
+    "ensSet": "PNS text record was successfully set"
   },
   "explore": {
     "createStrategy": "Створити стратегію",
@@ -438,7 +438,7 @@
   },
   "page": {
     "title": {
-      "home": "Snapshot",
+      "home": "PolkaVote",
       "setup": "Create a space",
       "timeline": "Timeline",
       "explore": "Explore",
@@ -469,7 +469,7 @@
   },
   "unsupportedNetwork": {
     "unsupportedNetwork": "Unsupported network",
-    "ensOnlyMainnet": "Snapshot only supports ENS on the ethereum mainnet. Once the space is created, you can use it across multiple chains.",
+    "ensOnlyMainnet": "PolkaVote only supports PNS on the ethereum mainnet. Once the space is created, you can use it across multiple chains.",
     "switchNetworkToMainnet": "To continue, you need to change the network in your wallet to Ethereum Mainnet.",
     "switchToMainnet": "Switch to Mainnet"
   }

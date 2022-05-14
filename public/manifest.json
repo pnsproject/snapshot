@@ -1,6 +1,6 @@
 {
-  "short_name": "Snapshot",
-  "name": "Snapshot",
+  "short_name": "PolkaVote",
+  "name": "PolkaVote",
   "description": "Where decisions get made",
   "iconPath": "icon.svg",
   "icons": [

@@ -271,7 +271,7 @@
     "createASpace": "स्पेस तैयार करे",
     "registerEnsButton": "Register",
     "supportedEnsTLDs": "Supported domain endings",
-    "helpDocsAndDiscordLinks": "Not sure how to create a space? Learn more in the <a target='_blank' href='https://docs.snapshot.org/spaces/create'> documentation </a> or join Snapshot <a target='_blank' href='https://discord.gg/snapshot'>Discord</a>.",
+    "helpDocsAndDiscordLinks": "Not sure how to create a space? Learn more in the <a target='_blank' href='https://docs.snapshot.org/spaces/create'> documentation </a> or join PolkaVote <a target='_blank' href='https://discord.gg/snapshot'>Discord</a>.",
     "setSpaceController": "Set space controller address on PNS",
     "editSpaceController": "Edit controller on PNS",
     "setController": "Set controller",
@@ -284,8 +284,8 @@
     "spaceOwnerAddressPlaceHolder": "e.g. 0xF78108c9BBaF466dd96BE41be728Fe3220b37119",
     "controllerAddress": "Controller address",
     "updateController": "Update controller",
-    "connectWithEnsController": "To modify the space controller you need to connect with the wallet that owns {ens}",
-    "seeOnEns": "See on ENS",
+    "connectWithEnsController": "To modify the space controller you need to connect with the wallet that owns {PNS}",
+    "seeOnEns": "See on PNS",
     "goToSettings": "Go to settings"
   },
   "notify": {
@@ -298,7 +298,7 @@
     "delegationRemoved": "Delegation removed",
     "proposalCreated": "Proposal created",
     "voteSuccessful": "Your vote is in!",
-    "ensSet": "ENS text record was successfully set"
+    "ensSet": "PNS text record was successfully set"
   },
   "explore": {
     "createStrategy": "स्ट्रेटेजी बनाये",
@@ -438,7 +438,7 @@
   },
   "page": {
     "title": {
-      "home": "Snapshot",
+      "home": "PolkaVote",
       "setup": "Create a space",
       "timeline": "Timeline",
       "explore": "Explore",
@@ -469,7 +469,7 @@
   },
   "unsupportedNetwork": {
     "unsupportedNetwork": "Unsupported network",
-    "ensOnlyMainnet": "Snapshot only supports ENS on the ethereum mainnet. Once the space is created, you can use it across multiple chains.",
+    "ensOnlyMainnet": "PolkaVote only supports PNS on the ethereum mainnet. Once the space is created, you can use it across multiple chains.",
     "switchNetworkToMainnet": "To continue, you need to change the network in your wallet to Ethereum Mainnet.",
     "switchToMainnet": "Switch to Mainnet"
   }
