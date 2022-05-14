@@ -9,11 +9,11 @@ const yearNow = new Date().getFullYear();
 const socials = [
   {
     icon: 'twitter',
-    link: 'https://twitter.com/SnapshotLabs'
+    link: ''
   },
   {
     icon: 'github',
-    link: `https://github.com/snapshot-labs`
+    link: ``
   },
 ];
 </script>

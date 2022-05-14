@@ -46,7 +46,7 @@ const isValidDomain = computed(() => {
   </BaseButton>
   <BaseLink
     @click="$emit('waitForRegistration')"
-    :link="`https://app.ens.domains/name/${modelValue}/register`"
+    :link="`https://www.pns.link/search?keyword=${modelValue}`"
     hide-external-icon
   >
     <BaseButton :disabled="!isValidDomain" class="w-full mt-2" primary>
