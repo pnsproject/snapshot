@@ -295,7 +295,7 @@
     "set": "Set"
   },
   "setup": {
-    "example": "z.B. yam.eth",
+    "example": "z.B. yam.dot",
     "chooseExistingEns": "Choose one of your existing PNS domains to create a space with:",
     "useSingleExistingEns": "Use your existing PNS domain:",
     "orReigsterNewEns": "Or register a new domain:",

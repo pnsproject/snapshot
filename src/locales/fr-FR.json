@@ -295,7 +295,7 @@
     "set": "Appliquer"
   },
   "setup": {
-    "example": "ex : yam.eth",
+    "example": "ex : yam.dot",
     "chooseExistingEns": "Choisissez un de vos domaines ENS existants pour créer un espace avec :",
     "useSingleExistingEns": "Utiliser votre domaine ENS existant :",
     "orReigsterNewEns": "Ou enregistrer un nouveau domaine :",

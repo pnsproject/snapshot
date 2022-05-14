@@ -295,7 +295,7 @@
     "set": "Set"
   },
   "setup": {
-    "example": "e.g. yam.eth",
+    "example": "e.g. yam.dot",
     "chooseExistingEns": "Alege unul dintre domeniile tale ENS existente pentru a crea un spațiu:",
     "useSingleExistingEns": "Utilizează domeniul tău ENS existent:",
     "orReigsterNewEns": "Sau înregistrează un nou domeniu:",

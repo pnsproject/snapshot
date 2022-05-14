@@ -295,7 +295,7 @@
     "set": "Set"
   },
   "setup": {
-    "example": "misalnya yam.eth",
+    "example": "misalnya yam.dot",
     "chooseExistingEns": "Pilih satu domain PNS anda untuk membuat ruang:",
     "useSingleExistingEns": "Pakai domain PNS anda:",
     "orReigsterNewEns": "Atau daftarkan domain yang baru:",

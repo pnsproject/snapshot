@@ -295,7 +295,7 @@
     "set": "Set"
   },
   "setup": {
-    "example": "예시 yam.eth",
+    "example": "예시 yam.dot",
     "chooseExistingEns": "공간을 만드는데 사용할 ENS 도메인 선택:",
     "useSingleExistingEns": "당신의 ENS 도메인을 사용하세요:",
     "orReigsterNewEns": "또는 새로운 도메인을 등록하세요:",

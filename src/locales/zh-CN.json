@@ -295,7 +295,7 @@
     "set": "设置"
   },
   "setup": {
-    "example": "例如 yam.eth",
+    "example": "例如 yam.dot",
     "chooseExistingEns": "选择您现有的一个ENS域名来创建空间：",
     "useSingleExistingEns": "使用您现有的ENS域名：",
     "orReigsterNewEns": "或者注册一个新的域名：",

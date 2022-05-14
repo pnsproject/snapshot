@@ -295,7 +295,7 @@
     "set": "設定する"
   },
   "setup": {
-    "example": "例 yam.eth",
+    "example": "例 yam.dot",
     "chooseExistingEns": "作成するスペースと紐付ける既存のENSドメインを選択してください。",
     "useSingleExistingEns": "既存のENSドメインを使用してください:",
     "orReigsterNewEns": "または新しいドメインを登録する：",

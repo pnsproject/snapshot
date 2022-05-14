@@ -295,7 +295,7 @@
     "set": "Установить"
   },
   "setup": {
-    "example": "например, yam.eth",
+    "example": "например, yam.dot",
     "chooseExistingEns": "Выберите один из существующих доменов ENS для создания сообщества:",
     "useSingleExistingEns": "Используйте свой существующий домен ENS:",
     "orReigsterNewEns": "Или зарегистрируйте новый домен:",
